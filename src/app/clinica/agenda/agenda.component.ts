@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AgendaDetista } from 'src/app/interface/agenda-dentista.interface';
 import { AgendaService } from 'src/app/service/agenda.service';
 
 @Component({
@@ -8,14 +10,17 @@ import { AgendaService } from 'src/app/service/agenda.service';
 })
 export class AgendaComponent implements OnInit {
 
+  horarios$: Observable<string[]>
+  agendamentosDentistas$: Observable<AgendaDetista[]>
+
   constructor(
     private readonly agendaService: AgendaService
   ) { }
 
   ngOnInit(): void {
-    this.agendaService.getAgendaPorData('23/06/2022').pipe()
-      .subscribe(data => console.log(data)
-    )
+
+    this.horarios$ = this.agendaService.getHorarios().pipe();
+    this.agendamentosDentistas$ = this.agendaService.getAgendaPorData('23-06-2022').pipe();
   }
 
 }

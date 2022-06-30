@@ -16,8 +16,15 @@ export class AgendaService {
     /*
     *  Recupera agendamentos por data. formato 'dd/mm/yyyy'
     */
-    getAgendaPorData(data: string): Observable<AgendaDetista> {
-        return this.http.get<AgendaDetista>(`${this.URL_API}${data}`);
+    getAgendaPorData(data: string): Observable<AgendaDetista[]> {
+        return this.http.get<AgendaDetista[]>(`${this.URL_API}${data}`);
+    }
+
+    /*
+    *  Recupera agendamentos por data. formato 'dd/mm/yyyy'
+    */
+    getHorarios(): Observable<string[]> {
+        return this.http.get<string[]>(`${this.URL_API}horarios`);
     }
 
 }
