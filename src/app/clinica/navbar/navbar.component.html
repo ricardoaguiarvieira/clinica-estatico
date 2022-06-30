@@ -1,0 +1,28 @@
+
+<!-- <mat-toolbar color="primary">
+</mat-toolbar> -->
+
+<div> 
+    <mat-toolbar color="primary">
+        <section>
+            <button class="" mat-button>
+                <mat-icon>menu</mat-icon>
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <button class="" mat-button [matMenuTriggerFor]="menuFinanceiro">
+                Financeiro
+            </button>
+            <mat-menu #menuFinanceiro="matMenu">
+                <p>example a</p>
+                <p>example b</p>
+                <p>example c</p>
+            </mat-menu>
+        </section>
+        <span class="alig-spacer"></span>
+        <button class="" mat-button>
+            login
+        </button>
+    </mat-toolbar>
+  </div>
+
+

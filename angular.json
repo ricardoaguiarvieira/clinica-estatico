@@ -27,9 +27,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,
@@ -130,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "clinica-estatico"
+  "defaultProject": "clinica-estatico",
+  "cli": {
+    "analytics": "86718a3c-2d01-4969-9713-21e46d3c5077"
+  }
 }
