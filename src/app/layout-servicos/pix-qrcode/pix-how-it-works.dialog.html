@@ -1,0 +1,34 @@
+<div class="pix-howItWorks">
+  <i class="material-icons pix-howItWorks-icon">pix</i>
+  <h1 mat-dialog-title class="pix-howItWorks-title">
+    Como pagar pedidos com pix
+  </h1>
+  <div mat-dialog-content>
+    <article class="pix-howItWorks-steps">
+      <h2>1° passo</h2>
+      <p>Copie o código que foi gerado.</p>
+
+      <h2>2° passo</h2>
+      <p>
+        Abra um aplicativo em que você tenha o Pix habilitado e use a opção Pix
+        Copia e Cola.
+      </p>
+
+      <h2>3° passo</h2>
+      <p>
+        Cole o código, confirme o valor e faça o pagamento. Ele será confirmado
+        na hora.
+      </p>
+    </article>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-stroked-button
+      color="primary"
+      class="forms-wrapper-strokedButton pix-howItWorks-closeButton"
+      (click)="onNoClick()"
+    >
+      Ok, entendi
+    </button>
+  </div>
+</div>

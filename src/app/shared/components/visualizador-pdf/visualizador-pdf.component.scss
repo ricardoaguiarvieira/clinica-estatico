@@ -1,0 +1,54 @@
+@media print {
+  * {
+    font-family: sans-serif;
+  }
+  div {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    display: block;
+  }
+  iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+  }
+}
+.mat-card-footer {
+  margin: 0 -16px -16px 0px;
+}
+
+#toolbar viewer-toolbar {
+  display: block !important;
+}
+#pdfFrame {
+  display: block !important;
+}
+
+.alerts-wrapper-message p {
+  margin: 0;
+  color: #3d5879;
+  padding-top: 0.5rem;
+  font-weight: 500;
+}
+.alerts-wrapper-icon {
+  width: 35px;
+  height: 35px;
+}
+.alerts-wrapper_success .alerts-wrapper-icon .mat-icon {
+  padding: 6px;
+  color: #287d3c;
+}
+
+@media (min-device-width: 320px) and (max-width: 992px) {
+.alerts_pdf {
+width: 100%!important;
+  // transform: translateX(1%) !important;
+  min-height: 60px !important;
+  position: relative;
+  min-width: 50px;
+}
+}

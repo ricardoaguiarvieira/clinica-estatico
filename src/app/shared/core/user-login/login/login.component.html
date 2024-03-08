@@ -1,0 +1,80 @@
+<main>
+  <section class="login-portal-administrativo">
+    <div class="login-portal-container">
+      <div class="login-portal-container-item">
+        <div class="login-portal-container-form">
+          <form [formGroup]="form">
+            <div class="login-portal-container-form-title">
+              <span ><strong>DETRAN-</strong>DF</span>
+            </div>
+            <div class="login-portal-container-form-sub-title">
+              <h2>Seja bem vindo!</h2>
+            </div>
+            <div class="login-portal-container-form-credenciais">
+              <span>Informe suas credenciais <br> para acessar o portal.</span>
+            </div>
+            <p class="login-portal-container-form-input">
+              <mat-form-field class="login-portal-container-form-field" appearance="outline" floatLabel="always">
+                <mat-label>Usuário/Cnpj *</mat-label>
+                <input 
+                  matInput
+                  [mask]="mask"
+                  class="input-upper" 
+                  placeholder="Usuário/Cnpj" 
+                  formControlName="username" 
+                  (input)="handleEventBlurCpfCnpj()"
+                  (keydown.enter)="handleEventBlurCpfCnpj()"
+                  />
+                  <mat-error *ngIf="errorHandling('username', 'required')">
+                    * Campo obrigatório
+                  </mat-error>               
+                  <mat-error *ngIf="errorHandling('username', 'credentialsInvalid')">
+                    * Credenciais inválidas
+                  </mat-error>
+              </mat-form-field>
+            </p>
+            <p class="login-portal-container-form-input">
+              <mat-form-field class="login-portal-container-form-field" appearance="outline" floatLabel="always">
+                <mat-label>Senha *</mat-label>
+                <input matInput ype="password" formControlName="password" [type]="hide ? 'password' : 'text'"
+                  placeholder="Informe sua senha">
+                <mat-icon class="login-portal-container-form-visibility" matSuffix (click)="hide = !hide">{{hide ?
+                  'visibility_off' : 'visibility'}}
+                </mat-icon>
+                <mat-error *ngIf="errorHandling('password', 'required')">
+                  * Campo obrigatório
+                </mat-error>
+                <mat-error *ngIf="errorHandling('password', 'credentialsInvalid')">
+                  * Credenciais inválidas
+                </mat-error>
+              </mat-form-field>
+              <span class="login-portal-container-form-checkbox">
+                <ng-container matColumnDef="checkBox">
+                  <mat-checkbox [color]="'primary'" formControlName="manterConectado">
+                    Manter conectado
+                  </mat-checkbox>
+                </ng-container>
+              </span>
+            </p>
+            <div class="login-portal-container-form-div-btn">
+              <button class="login-portal-container-form-btn" mat-raised-button (click)="access()">
+                ACESSAR
+              </button>
+            </div>
+          </form>
+          <div class="login-portal-container-form-esqueceu-senha">
+            <p href="">
+              <mat-icon class="login-portal-container-form-icon-lock">lock_outline</mat-icon><a href="/login">Esqueceu a senha?</a>
+            </p>
+          </div>
+          <div class="login-portal-container-form-label-nao-tem-conta">
+            <p>Não tem conta? <span class="login-portal-container-form-label-cadastra-se">
+              <a href="/login">Cadastre-se</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wallpaper"></section>
+</main>

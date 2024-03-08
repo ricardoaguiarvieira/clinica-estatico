@@ -1,0 +1,60 @@
+%regular-grid {
+  margin: 8px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.forms-wrapper-body-field {
+  &_col12 {
+    @extend %regular-grid;
+    max-width: calc(100% - 23px);
+  }
+  &_col11 {
+    @extend %regular-grid;
+    max-width: calc(91.61% - 16px);
+  }
+  &_col10 {
+    @extend %regular-grid;
+    max-width: calc(83.23% - 16px);
+  }
+  &_col9 {
+    @extend %regular-grid;
+    max-width: calc(75% - 16px);
+  }
+  &_col8 {
+    @extend %regular-grid;
+    max-width: calc(66.62% - 16px);
+  }
+  &_col7 {
+    @extend %regular-grid;
+    max-width: calc(58.23% - 16px);
+  }
+  &_col6 {
+    @extend %regular-grid;
+    max-width: calc(50% - 16px);
+  }
+  &_col5 {
+    @extend %regular-grid;
+    max-width: calc(41.61% - 16px);
+  }
+  &_col4 {
+    @extend %regular-grid;
+    max-width: calc(33% - 16px);
+  }
+  &_col4:last-child {
+    max-width: calc(34% - 16px);
+  }
+
+  &_col3 {
+    @extend %regular-grid;
+    max-width: calc(25% - 16px);
+  }
+  &_col2 {
+    @extend %regular-grid;
+    max-width: calc(16.62% - 19px);
+  }
+  &_col1 {
+    @extend %regular-grid;
+    max-width: calc(8% - 16px);
+  }
+}

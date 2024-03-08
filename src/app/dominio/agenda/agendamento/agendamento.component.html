@@ -1,0 +1,26 @@
+<div >
+    <h1 class="titulo" > Agendamento</h1>
+    <mat-card class="pesquisar-card">
+        <table>
+            <thead>
+                <td class="table-cabecalho" *ngFor="let cabecalho of tabela.cabecalho">
+                    <span>{{cabecalho.titulo}}</span>
+                </td>
+            </thead>
+            <tr *ngFor="let horario of tabela.horarios">
+                <td class="col-horario">
+                    <span>{{horario.hora}}</span>
+                </td>
+                <td *ngFor="let agendamento of horario.agendamentos" (click)="alterarAgendamento(agendamento)">
+                    <span>{{agendamento.descricao}}</span>
+                </td>
+            </tr>
+            
+        </table>
+    </mat-card>
+
+    <div class="control-button">
+        <button mat-button class="forms-wrapper-primaryButton">SALVAR</button>
+        <button mat-stroked-button (click)="voltar()" class="voltar">VOLTAR</button>
+    </div>
+</div>

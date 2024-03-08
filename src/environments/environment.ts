@@ -1,12 +1,14 @@
 // This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { BASE_API_LOCAL } from "./base-api/base-local";
+import { devDns } from './env-urls/env-urls.dev';
+import { dns } from './env-urls/env-urls.prod';
 
 export const environment = {
   production: false,
-  pathApi: BASE_API_LOCAL
+  dns: devDns,
+  KEY_RECAPTCHA: '6LfmYsEZAAAAAAhXTVtV8NbAV9rxr4PVXNzc_pfz',
 };
 
 /*

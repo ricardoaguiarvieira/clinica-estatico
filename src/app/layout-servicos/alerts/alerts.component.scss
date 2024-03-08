@@ -1,0 +1,168 @@
+@import "../../shared/styles/colours.scss";
+
+%border-common {
+  border-radius: 6px;
+}
+
+.alerts {
+  &-wrapper {
+    @extend %border-common;
+    border: 1px solid #333;
+    max-width: 960px;
+    min-width: 27vw;
+    min-height: 70px;
+    z-index: 33;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    background: #ccc;
+    transform: translateX(-50%);
+    margin: 12px 12px 12px 4px;
+    float: left;
+    &-icon {
+      @extend %border-common;
+      background: #333;
+      float: left;
+      width: 40px;
+      height: 40px;
+      margin: 15px;
+      .mat-icon {
+        padding: 8px;
+        color: #fff;
+      }
+    }
+    &-message {
+      float: left;
+      width: calc(100% - 130px);
+      padding: 12px;
+      font-size: 13px;
+      p {
+        margin: 0;
+        color: $blueregular-text-color;
+      }
+      h1 {
+        margin: 6px 0px 4px 0px;
+        line-height: 100%;
+        font-size: 13px;
+        font-weight: bold;
+        color: $bluedark-text-color;
+      }
+    }
+    &-closeButton {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      color: #333;
+    }
+    &_success {
+      background: $success-secondary;
+      border-color: $success-main;
+      .alerts-wrapper-icon {
+        background: $success-main;
+      }
+      mat-icon {
+        color: $success-dark;
+      }
+    }
+    &_alert {
+      background: $alert-secondary;
+      border-color: $alert-main;
+      .alerts-wrapper-icon {
+        background: $alert-main;
+      }
+      mat-icon {
+        color: $alert-dark;
+      }
+    }
+    &_error {
+      background: $error-secondary;
+      border-color: $error-main;
+      .alerts-wrapper-icon {
+        background: $error-main;
+      }
+      mat-icon {
+        color: $error-dark;
+      }
+    }
+    &_warning {
+      background: $warning-secondary;
+      border-color: $warning-main;
+      .alerts-wrapper-icon {
+        background: $warning-main;
+      }
+      mat-icon{
+        color: $warning-main;
+      
+      }
+    }
+  }
+}
+
+.message-sucess {
+  &-wrapper {
+    border: 2px solid #0E9745;
+    border-radius: 6px;
+    min-height: 70px;
+    z-index: 34;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 12px 0px 12px 5px;
+    &-icon {
+      float: left;
+      margin: 15px;
+      background-image: url('/assets/svg/icon-sucesso-infrator.svg');
+      .mat-icon {
+        padding: 11px;
+      }
+    }
+    p {
+      margin: 0;
+      color: $blueregular-text-color; 
+    }
+    h1 {
+      margin: 19px 0px 4px 0px;
+      line-height: 100%;
+      font-size: 19px;
+      font-weight: bold;
+      color:#0E9745;
+    }
+
+  }
+}
+
+.message-sem-infracao {
+  &-wrapper {
+    border: 2px solid #2A70E2;
+    border-radius: 6px;
+    min-height: 70px;
+    z-index: 34;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 12px 0px 12px 5px;
+    &-icon {
+      float: left;
+      margin: 12px;
+      background-image: url('/assets/svg/icon-sem-autuacao-infrator.svg');
+      .mat-icon {
+        padding: 10px;
+      }
+    }
+    h1 {
+      margin-top: 3%;
+      line-height: 100%;
+      font-size: 19px;
+      font-weight: bold;
+      color: $black-background-color; 
+    }
+
+  }
+}
+
+
+@media print {
+  .alerts-wrapper {
+    display: none;
+  }
+}

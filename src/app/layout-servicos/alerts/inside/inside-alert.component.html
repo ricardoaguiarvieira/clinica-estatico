@@ -1,0 +1,13 @@
+<section class="alerts-wrapper alert-inside" [ngClass]="colours">
+  <div class="alerts-wrapper-icon">
+    <mat-icon>{{ icon }}</mat-icon>
+  </div>
+  <article class="alerts-wrapper-message">
+    <h1>{{ title }}</h1>
+    <p>
+      {{ message }}
+    </p>
+
+    <ng-content></ng-content>
+  </article>
+</section>

@@ -1,5 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-body{
-    margin: 0%;
+@import "./app/shared/styles/material.custom.scss";
+@import "./app/shared/styles/header-icons.scss";
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden !important;
+  background-image: url("/assets/images/backgrounds/main_back.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 3;
+    display: contents;
 }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+strong {
+  font-weight: 700;
+}
+

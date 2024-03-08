@@ -1,0 +1,192 @@
+@import "../../../shared/styles/colours.scss";
+@import "../../../shared/styles/forms.scss";
+
+table {
+  * {
+    font-family: Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 12px;
+    border-color: #dee5ee !important; 
+  }
+  td {
+    height: 32px !important;
+    padding: 4px;
+  }
+}
+
+@page {
+  size: A4;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.print-helper {
+  border-bottom: 1px solid #333;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+@media print {
+  * {
+    font-size: 8px;
+    padding: 0;
+    margin: 0;
+  }
+  .section {
+    left: -32px;
+    top: 0px;
+    width: 750px;
+    height: 100%;
+    position: absolute;
+    background: white;
+    z-index: 8;
+  }
+  .pagina-bordero {
+    border: none !important;
+  }
+
+  .print-helper {
+    display: none;
+    visibility: hidden;
+  }
+
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .block {
+    page-break-before: always;
+  }
+}
+
+/*fim print*/
+
+.pagina-bordero {
+  margin: 0 auto;
+  padding: 10px 10px 30px;
+  /*padding-top: 20px;*/
+  /*padding-bottom: 20px;*/
+}
+
+.bordero-wrapper {
+  width: 700px;
+  margin: 0 auto;
+  padding: 4px !important;
+}
+
+.bordero-wrapper td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.logo-detran-bordero {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.bordabaixo {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #dee5ee;
+}
+
+.bordadireita {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #dee5ee;
+}
+
+.texto11bold {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.texto10bold {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+.bordadireitabaixo {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #dee5ee;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #dee5ee;
+}
+
+.texto10 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+}
+
+.bordaesqdir {
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-right-color: #dee5ee;
+  border-left-color: #dee5ee;
+}
+
+.bordacompleta {
+  border: 1px solid #dee5ee;
+}
+
+.bordacimabaixo {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: #dee5ee;
+  border-bottom-color: #dee5ee;
+}
+
+.bordacimabaixodir {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-right-style: solid;
+  border-top-color: #dee5ee;
+  border-bottom-color: #dee5ee;
+  border-right-color: #dee5ee;
+}
+
+.bordacimadir {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #dee5ee;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #dee5ee;
+}
+
+.textomenor {
+  line-height: 100%;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.itemTitle {
+  background: $topic-line-fill;
+  height: 48px;
+  &-subTopic {
+    background-color: #e7eaef;
+  }
+}
+
+.topicEntity {
+  width: 350px;
+  height: 100px;
+  padding-top: 16px;
+}
+
+.topicAuthentication{
+  font-size: 14px !important;
+  font-style: italic;
+  padding: 2px 18px !important;
+  font-weight: bold;
+}

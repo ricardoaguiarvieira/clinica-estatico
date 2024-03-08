@@ -1,6 +1,9 @@
-import { BASE_API_LOCAL } from "./base-api/base-local";
+import { urlExtena } from './env-urls/enc-urls-externas';
+import { dns } from './env-urls/env-urls.prod';
 
 export const environment = {
   production: true,
-  pathApi: BASE_API_LOCAL
+  dns,
+  urlExternas: urlExtena,
+  KEY_RECAPTCHA: '6LcyD8EZAAAAAJjYGBejD7YDFaGVRYaHO4f9uk1E',
 };

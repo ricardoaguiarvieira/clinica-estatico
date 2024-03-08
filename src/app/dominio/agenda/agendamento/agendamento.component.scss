@@ -1,0 +1,71 @@
+@import '../../../shared/styles/forms.scss';
+@import '../../../shared/styles/labels.scss';
+@import '../../../shared/styles/colours.scss';
+@import '../../../layout-servicos/alerts/alerts.component.scss';
+
+.titulo {
+  margin: 20px;
+  margin-top: 25px;
+  color: $grey-text-color;
+  span {
+    color: $primary-text-color;
+  }
+}
+
+.pesquisar-card {
+  margin: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  column-count: 8;
+  column-gap: 20px;
+
+  mat-form-field {
+    border-color: $grey-border-color;
+    margin-left: 0%;
+  }
+
+  h2 {
+    color: $grey-text-color;
+  }
+
+  p {
+    color: $grey-text-color;
+  }
+
+}
+
+.forms-wrapper-primaryButton {
+  margin: 15px;
+}
+
+.voltar {
+  width: 89px;
+  height: 50px;
+  margin: 15px;
+  color: #2a70e2;
+  background-color: $white-text-color;
+  text-align: center;
+  border-radius: 5px;
+  border-color: #0096ff;
+}
+
+.control-button {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+}
+
+
+.col-horario{
+  width: 50px;
+  background-color: rgb(179, 205, 228);
+}
+.table-cabecalho{
+  background-color: rgb(179, 205, 228);
+}
+td{
+  height: 30px;
+}
+td:hover{
+  background-color: rgb(212, 229, 245);
+}

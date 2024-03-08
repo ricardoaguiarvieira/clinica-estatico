@@ -1,0 +1,154 @@
+.label {
+  // Credenciadas
+  &-credenciadas-consulta {
+    background-image: url('/assets/svg/icon_administracao_empresas_credenciadas.svg');
+  }
+  // Veículos:
+  &-veiculos-consulta {
+    background-image: url('/assets/svg/icon_veiculos_consulta.svg');
+  }
+  &-veiculos-emissao {
+    background-image: url('/assets/svg/icon_veiculos_emissao.svg');
+  }
+  &-veiculos-transferencia {
+    background-image: url('/assets/svg/icon_veiculos_transferencia.svg');
+  }
+  //Habilitação:
+  &-habilitacao-consulta {
+    background-image: url('/assets/svg/icon_habilitacao_consulta.svg');
+  }
+  &-habilitacao-solicitacao {
+    background-image: url('/assets/svg/icon_habilitacao_solicitacao.svg');
+  }
+  &-habilitacao-outros {
+    background-image: url('/assets/svg/icon_habilitacao_outros.svg');
+  }
+  // Agendamento
+  &-agendamento-consulta {
+    background-image: url('/assets/svg/icon_agendamento_consulta.svg');
+  }
+  // Infração
+  &-infracao-consulta {
+    background-image: url('/assets/svg/icon_infracao_consulta.svg');
+  }
+  &-infracao-solicitacao {
+    background-image: url('/assets/svg/icon_infracao_solicitacao.svg');
+  }
+  &-infracao-notificacao {
+    background-image: url('/assets/svg/icon_infracao_notificacao.svg');
+  }
+  &-administracao {
+    background-image: url('/assets/svg/icon_administracao.svg');
+  }
+
+  // Tipos de veículios
+  &-veiculos_carro {
+    background-image: url('/assets/svg/icon_veiculos_carro.svg');
+  }
+  &-veiculos_moto {
+    background-image: url('/assets/svg/icon_veiculos_moto.svg');
+  }
+  &-veiculos_caminhao {
+    background-image: url('/assets/svg/icon_veiculos_caminhao.svg');
+  }
+  &-veiculos_onibus {
+    background-image: url('/assets/svg/icon_veiculos_onibus.svg');
+  }
+  &-veiculos_reboque {
+    background-image: url('/assets/svg/icon_veiculos_reboque.svg');
+  }
+  &-veiculos_van {
+    background-image: url('/assets/svg/icon_veiculos_van.svg');
+  }
+  &-veiculos_camioneta {
+    background-image: url('/assets/svg/icon_veiculos_camioneta.svg');
+  }
+  
+  &-infracao-confirmacao {
+    background-image: url('/assets/svg/icon-confirmar-infrator.svg');
+  }
+
+  // Infração
+  &-infracao-consulta {
+    background-image: url('/assets/svg/icon_infracao_consulta.svg');
+  }
+  &-infracao-solicitacao {
+    background-image: url('/assets/svg/icon_infracao_solicitacao.svg');
+  }
+  &-infracao-notificacao {
+    background-image: url('/assets/svg/icon_infracao_notificacao.svg');
+  }
+  &-administracao-administrar {
+    background-image: url('/assets/svg/icon_administracao.svg');
+  }
+  &-infracao-confirmacao {
+    background-image: url('/assets/svg/icon-confirmar-infrator.svg');
+  }
+  &-infracao-acompanhamento {
+    background-image: url('/assets/svg/icon-acompanhamento-solic-infrator.svg');
+  }
+  &-infracao-sucesso {
+    background-image: url('/assets/svg/icon-sucesso-infrator.svg');
+  }
+  &-infracao-sem-autuacao {
+    background-image: url('/assets/svg/icon-sem-autuacao-infrator.svg');
+  }
+}
+
+.label-color {
+  // Veículos:
+  &-veiculos-consulta {
+    background-color: $blue-background;
+    border-color: $blue-border;
+  }
+  &-veiculos-emissao {
+    background-color: #c7f2ff;
+    border-color: #a1e8ff;
+  }
+  &-veiculos-transferencia {
+    background-color: #c7e4ff;
+    border-color: #a1ccff;
+  }
+  // Habilitação:
+  &-habilitacao-consulta {
+    background-color: #ccffc7;
+    border-color: #a1ffb6;
+  }
+  &-habilitacao-solicitacao {
+    background-color: #b2eeb8;
+    border-color: #98e39f;
+  }
+  &-habilitacao-outros {
+    background-color: #78e5aa;
+    border-color: #54d08d;
+  }
+  // Agendamento:
+  &-agendamento-consulta {
+    background-color: #ede4ff;
+    border-color: #ceb8ff;
+  }
+  // Infração:
+  &-infracao-consulta {
+    background-color: #fff9c7;
+    border-color: #ffd9a1;
+  }
+  &-infracao-solicitacao {
+    background-color: #ffe9c7;
+    border-color: #ffcea1;
+  }
+  &-infracao-notificacao {
+    background-color: #ffdfc7;
+    border-color: #ffc3a1;
+  }
+  // Administracao:
+  &-administracao  {
+    background-color: #ede4ff;
+    border-color: #ceb8ff;
+  }
+
+  //Credenciadas
+  &-credenciadas-consulta  {
+    background-color: #ede4ff;
+    border-color: #ceb8ff;
+  }
+}

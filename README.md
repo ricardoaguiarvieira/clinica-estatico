@@ -1,27 +1,60 @@
-# ClinicaEstatico
+# Portal Administrativo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+##### Portal serviços modernizado para atender às necessidades dos usuários, provendo a eles uma experiência mais ágil e agradável.
 
-## Development server
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+Este projeto foi gerado com [Angular CLI] (https://github.com/angular/angular-cli) versão 12.1.1.
 
-## Code scaffolding
+## Servidor de desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `npm start` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`.
+O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
+Url de Exemplo: http://localhost:4200/servicos/portal-administrativo
+
+Execute `ng g component-name` para gerar um novo componente. Você também pode usar `ng g diretiva | pipe | service | class | guard | interface | enum | module` para gerar o que for preciso.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Execute `npm run build` para construir o projeto seguindo configurações existentes.
 
-## Running unit tests
+## Executando testes unitários
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `npm test` para executar os testes unitários via [Karma] (https://karma-runner.github.io), seguindo configurações do projeto.
 
-## Running end-to-end tests
+## Executando testes de ponta a ponta
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Execute `ng e2e` para executar os testes ponta a ponta através de uma plataforma de sua escolha. Para usar este comando, você precisa primeiro adicionar um pacote que implemente recursos de teste ponta a ponta.
 
-## Further help
+## Instalação
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Detran Digital requer [Node.js](https://nodejs.org/) v14+ para ser executado.
+
+Instale as dependências e devDependencies e inicie o servidor.
+
+```sh
+cd portal-administrativo
+npm i
+npm start
+```
+
+## Demais Informações
+
+Temos um colaborador, `Max Salvado Pessoa`, que estará à frente da criação das telas HTML/CSS, seguindo o protótipo.
+Temos tbm os colaboradores, `Thiago Leite`, `Francisco Ricardo` e `Anilton Arleandro`, que estarão a frente da arquitetura de pastas do projeto, além de tirar dúvidas sobre implementação da lógica de negócio do DETRAN.
+
+Usuário e senha para entrar na VPN e tbm em todos os links do DETRAN já foram enviados para todos vcs. Caso não tenham recebido favor nos contactar.
+
+#### URL Projeto de IMPLEMENTACAO - FRONTEND
+
+https://gitlab.detran.df.gov.br/frontend/portal-administrativo
+
+#### URL do Prototipo
+
+https://marvelapp.com/prototype/690166a/screen/82202795
+
+> Obs. 1: Criar branch `"feature/nome-funcionalidade"` com código da branch DEVELOP.
+> Obs. 2: Realizar toda a implementação, `COM TESTES UNITÁRIOS (cobertura de 70%)`
+> Obs. 3: Todos os serviços a serem consumidos para implementação das funcionalidades encontram-se disponíveis na classe `"src\app\shared\service\portal.service.ts"`, bastando apenas o Dev importar esse serviço no construtor do componente em implementação.
+> Obs. 4: `Sempre que forem realizar comits, rodem ao menos o lint. Estamos tendo problemas de lint nos commits realizados. É de responsabilidade do colaborador corrigir erros e warnnings do lint na funcionalidade em implementação.` Ao final do projeto não teremos nenhum erro e warnning se trabalharmos em equipe.

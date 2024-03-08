@@ -1,0 +1,22 @@
+@import '../../styles/forms.scss';
+@import '../../styles/labels.scss';
+
+
+.pad-bottom {
+  padding-bottom: 5px;
+  margin-left: 100px;
+}
+
+span.titulo-card {
+  width: 100%;
+  display: block;
+}
+
+.mat-card-footer{
+  margin: 0 -16px -16px 0px;
+}
+#footer{
+  .mat-card-actions {
+    margin-left: 0px !important;
+  }
+}

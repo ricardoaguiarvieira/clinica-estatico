@@ -1,0 +1,41 @@
+::ng-deep html, body {
+    background-image: none;
+}
+
+.wallpaper {
+    position: initial;
+    background:
+    linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0)),
+    url('../../../../assets/images/portal-administrativo-backgrounds/file.enc');
+    background-repeat: no-repeat;  
+    background-size: cover;
+    background-position: center;
+    flex: 2;
+    width: 100%;
+    height: calc(120vh - 70px);
+}
+
+.campo_texto {
+    padding-left: 15px;
+    padding-top: 50px;
+}
+
+.mensagem_boas_vindas {
+    text-align: left;
+    font: normal normal 500 24px/38px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.espacamento {
+    padding-top: 40px;
+}
+
+.mensagem_de_descricao {
+    text-align: left;
+    font: normal normal 500 20px/34px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}

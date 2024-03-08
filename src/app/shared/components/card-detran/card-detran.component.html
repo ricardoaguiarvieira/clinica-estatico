@@ -1,0 +1,77 @@
+<mat-card class="form-card">
+  <div [class]="iconeClass"></div>
+  <mat-card-title id="tituloCardParent"
+    ><span class="titulo-card" id="tituloCard">{{
+      tituloCard
+    }}</span></mat-card-title
+  >
+
+  <app-inside-alert
+    [type]="tipoAlerta"
+    [hidden]="!conteudoAlerta.children.length"
+  >
+    <div #conteudoAlerta>
+      <ng-content select="[alerta]"></ng-content>
+    </div>
+  </app-inside-alert>
+
+  <mat-card-subtitle>
+    {{ descricao }}
+  </mat-card-subtitle>
+
+  <mat-card-content>
+    <div class="forms-wrapper-header" *ngIf="tituloConteudo">
+      {{ tituloConteudo }}
+    </div>
+    <ng-content></ng-content>
+  </mat-card-content>
+
+  <mat-card-footer id="footer">
+    <mat-card-actions>
+      <!--  <button mat-raised-button
+        color="primary"
+        class="forms-wrapper-primaryButton">
+        Imprimir
+        <i class="material-icons">local_print_shop</i>
+      </button> -->
+
+      <button
+        mat-stroked-button
+        *ngIf="botao01 && botao01.visivel"
+        color="primary"
+        class="forms-wrapper-primaryButton"
+        (click)="botao01.click($event)"
+      >
+        {{ botao01.texto }}
+        <i *ngIf="botao01.icone" class="material-icons">{{ botao01.icone }}</i>
+      </button>
+
+      <button
+        mat-stroked-button
+        *ngIf="botao02 && botao02.visivel"
+        color="primary"
+        class="forms-wrapper-strokedButton"
+        (click)="botao02.click($event)"
+      >
+        {{ botao02.texto }}
+        <i *ngIf="botao02.icone" class="material-icons">{{ botao02.icone }}</i>
+      </button>
+
+      <button
+        mat-stroked-button
+        *ngIf="botao03 && botao03.visivel"
+        color="primary"
+        class="forms-wrapper-primaryButton"
+        (click)="botao03.click($event)"
+      >
+        {{ botao03.texto }}
+        <i *ngIf="botao03.icone" class="material-icons">{{ botao03.icone }}</i>
+      </button>
+    </mat-card-actions>
+  </mat-card-footer>
+</mat-card>
+
+<app-botao-voltar
+  (acaoVoltarEmiter)="tratarEventoBtnVoltar()"
+  *ngIf="buttonVoltar"
+></app-botao-voltar>

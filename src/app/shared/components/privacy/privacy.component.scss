@@ -1,0 +1,47 @@
+@import "../../../shared/styles/forms.scss";
+@import "../../../shared/styles/labels.scss";
+@import "../../../shared/styles/colours.scss";
+@import "../../../shared/styles/breakpoints.scss";
+
+.home-container {
+    margin-top: 125px;
+    float: left;
+    width: calc(100% + 0px);
+    left: -15px;
+    position: relative;
+    padding-top: 20px;
+    text-align: justify;
+
+    h1 {
+        font-size: 30px;
+        line-height: 64px;
+        font-weight: 700;
+    }
+    h3 {
+        font-size: 20px;
+        line-height: 35px;
+        font-weight: 500;
+    }
+    p {
+        font-size: 16px;
+        line-height: 130%;
+    }
+    li{
+        font-size: 16px;
+        line-height: 140%;
+    }
+}
+
+@media only screen and (max-width: $mobile-width) {
+.home-container {
+    margin: 0px;
+    flex-wrap: wrap;
+    width: calc(100% - 32px);
+    padding: 16px;
+    left: 0px;
+    padding-top: 20px;
+    h1{
+        line-height: 35px;
+    }
+  }
+}

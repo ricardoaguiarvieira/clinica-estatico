@@ -1,0 +1,22 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+    <mat-nav-list class="nav-list">
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+              <mat-icon>drafts</mat-icon><label for="">Agenda</label>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <a routerLink=""
+            (click)="navigate('/agenda', true)">
+            Agendamento
+          </a>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

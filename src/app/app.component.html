@@ -1,2 +1,11 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div>
+  <app-loader></app-loader>
+  <router-outlet></router-outlet>
+</div>
+<section *ngIf="alertsService.alerta.show">
+  <app-alerts
+    [type]="alertsService.alerta.type"
+    [message]="alertsService.alerta.message"
+  ></app-alerts>
+</section>
+

@@ -1,0 +1,12 @@
+@import "../../../shared/styles/colours.scss";
+@import "../alerts.component.scss";
+
+.alert {
+  &-inside {
+    position: relative;
+    float: left;
+    width: calc(100% - 64px);
+    text-align: left;
+    z-index: 4;
+  }
+}

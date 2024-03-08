@@ -1,0 +1,20 @@
+<section class="alerts-wrapper" [ngClass]="colours">
+  <div class="alerts-wrapper-icon">
+    <mat-icon>{{ icon }}</mat-icon>
+  </div>
+  <article class="alerts-wrapper-message">
+    <h1>{{ title }}</h1>
+    <p>
+      {{ message }}
+    </p>
+  </article>
+  <button
+    mat-icon-button
+    color="primary"
+    aria-label="Example icon button with a home icon"
+    class="alerts-wrapper-closeButton"
+    (click)="fecharAlerta()"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</section>

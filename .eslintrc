@@ -1,0 +1,54 @@
+{
+  "root": true,
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json",
+          "tsconfig.app.json",
+          "tsconfig.spec.json"
+          // "e2e/tsconfig.json"
+        ],
+        "sourceType": "module",
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {
+        /**
+         * Any TypeScript source code (NOT TEMPLATE) related rules you wish to use/reconfigure over and above the
+         * recommended set provided by the @angular-eslint project would go here.
+         */
+        "@angular-eslint/directive-selector": [
+          "error",
+          { "type": "attribute", "prefix": "app", "style": "camelCase" }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          { "type": "element", "prefix": "app", "style": "kebab-case" }
+        ],
+        "quotes": ["error", "single"],
+        "@angular-eslint/no-empty-lifecycle-method": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/unbound-method": "off"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        /**
+         * Any template/HTML related rules you wish to use/reconfigure over and above the
+         * recommended set provided by the @angular-eslint project would go here.
+         */
+      }
+    }
+  ]
+}

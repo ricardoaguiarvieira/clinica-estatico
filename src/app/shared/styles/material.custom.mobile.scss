@@ -1,0 +1,30 @@
+@import "./colours.scss";
+@import "./breakpoints.scss";
+
+@media only screen and (max-width: $mobile-width) {
+  .cdk-overlay-pane {
+    top: 88px !important;
+  }
+
+  .mat-menu-panel {
+    top: 8px !important;
+    //height: calc(100vh - 98px); 
+    height: calc(100vh - 160px);
+  }
+
+  .cdk-overlay-backdrop,
+  .cdk-overlay-transparent-backdrop,
+  .cdk-overlay-backdrop-showing {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: $mobile-width) {
+  .breadcrumb-toolbar,
+  .breadcrumb-router {
+    background: $white-text-color !important;
+    left: -14px !important;
+    top: -150px !important;
+    width: calc(100% + 26px) !important;
+  }
+}

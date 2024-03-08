@@ -1,0 +1,345 @@
+<section class="section">
+    <div class="page-info no-print">
+      <div class="content">
+        <!-- <h1 class="title-border">DETRAN - DF</h1> -->
+      </div>
+    </div>
+  
+    <div class="pagina-bordero">
+      <div
+        class="print-helper no-print"
+        style="text-align: right"
+        [hidden]="true"
+      >
+        <button
+          mat-raised-button
+          color="primary"
+          class="forms-wrapper-primaryButton"
+          (click)="onPrint()"
+        >
+          Imprimir
+          <i class="material-icons">local_print_shop</i>
+        </button>
+      </div>
+  
+      <div id="bordero-wrapper">
+        <div class="bordero-wrapper">
+          <div class="block">
+            <div class="card">
+              <div class="card-content">
+                <table
+                  width="100%"
+                  border="0"
+                  cellpadding="2"
+                  cellspacing="0"
+                  class="bordacompleta"
+                >
+                  <tr>
+                    <td width="100%" height="17" rowspan="4" class="bordadireita">
+                      <table
+                        width="100%"
+                        border="0"
+                        cellspacing="0"
+                        bordercolor="#000000"
+                        class="topicEntity"
+                      >
+                        <tr>
+                          <td width="21%">
+                            <img
+                              class="logo-detran-bordero"
+                              [src]="logoImageBase64"
+                              width="55"
+                              height="65"
+                              alt="Logotipo Detran DF"
+                            />
+                          </td>
+                          <td width="79%">
+                            <strong>
+                              <span class="textomenor">
+                                <b>Governo do Distrito Federal</b>
+                                <br />Secretaria de Seguran&ccedil;a
+                                P&uacute;blica <br />Departamento de
+                                Tr&acirc;nsito - DETRAN/DF <br />Documento de
+                                Arrecada&ccedil;&atilde;o de Servi&ccedil;os - DAS
+                                <br />
+                                <br />
+                              </span>
+                            </strong>
+                          </td>
+                          <td valing="middle">&nbsp;</td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td colspan="2" class="bordabaixo itemTitle" align="center">
+                      <span class="texto11bold" style="font-size: 14px"
+                        >Dados identificat&oacute;rios</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="203" class="bordadireitabaixo">
+                      <span class="texto10"
+                        >Emiss&atilde;o:&nbsp;{{ formatDate(dataInvoice.dataInvoiceEmissao) }}</span
+                      >
+                    </td>
+                    <td width="158" class="bordabaixo">
+                      <span class="texto10">Operador: {{ dataInvoice.operador }}</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="203" class="bordadireita">
+                      <span class="texto10"
+                        >Validade:&nbsp;{{ formatDate(dataInvoice.validade) }}</span
+                      >
+                    </td>
+                    <td width="158">
+                      <span class="texto10"
+                        >Vencimento:&nbsp; {{ formatDate(dataInvoice.vencimento)  }}</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+                <table
+                  width="100%"
+                  border="0"
+                  cellpadding="3"
+                  cellspacing="0"
+                  class="bordaesqdir"
+                >
+                  <tr class="texto11bold itemTitle">
+                    <td colspan="4" class="bordabaixo" align="center">
+                      Dados do ve&iacute;culo
+                    </td>
+                  </tr>
+                  <tr class="texto10">
+                    <td width="101" class="bordadireitabaixo">
+                      Placa:&nbsp; {{ formatPlaca(dataInvoice.placa) }}
+                    </td>
+                    <td width="277" class="bordadireitabaixo">
+                      Marca/Mod:&nbsp; {{ dataInvoice.marcaMod }}
+                    </td>
+                    <td width="162" class="bordadireitabaixo">
+                      Cor:&nbsp; {{ dataInvoice.cor }}
+                    </td>
+                    <td width="134" class="bordabaixo">
+                      Fab/Mod:&nbsp; {{ dataInvoice.fabMod }}
+                    </td>
+                  </tr>
+                  <tr class="texto10">
+                    <td colspan="2" class="bordadireita">
+                      Propriet&aacute;rio:&nbsp;
+                      {{ dataInvoice.proprietario }}
+                    </td>
+                    <td class="bordadireita">CPF:&nbsp; {{ dataInvoice.cpfCgc }}</td>
+                    <td>Exerc&iacute;cio:&nbsp; {{ dataInvoice.anoExercicio }}</td>
+                  </tr>
+                </table>
+                <table
+                  width="100%"
+                  border="0"
+                  cellpadding="3"
+                  cellspacing="0"
+                  class="bordacompleta"
+                >
+                  <tr class="texto11bold itemTitle">
+                    <td colspan="4" align="center" class="bordabaixo">
+                      Dados do servi&ccedil;o
+                    </td>
+                  </tr>
+                  <tr class="texto10bold">
+                    <td
+                      width="40%"
+                      align="center"
+                      class="bordadireitabaixo itemTitle-subTopic"
+                    >
+                      <b>Servi&ccedil;o</b>
+                    </td>
+                    <td
+                      width="16%"
+                      align="center"
+                      class="bordadireitabaixo itemTitle-subTopic"
+                    >
+                      <b>Quantidade</b>
+                    </td>
+                    <td
+                      width="24%"
+                      align="center"
+                      class="bordadireitabaixo itemTitle-subTopic"
+                    >
+                      <b>Tipo de Envio</b>
+                    </td>
+                    <td
+                      width="20%"
+                      align="center"
+                      class="bordabaixo itemTitle-subTopic"
+                    >
+                      <b>Valor R$</b>
+                    </td>
+                  </tr>
+                  <tr class="texto10">
+                    <td width="40%" align="center" class="bordadireita">
+                      {{ dataInvoice.descServico }}
+                    </td>
+                    <td width="16%" align="center" class="bordadireita">1</td>
+                    <td width="24%" align="center" class="bordadireita">
+                      <span v-if="borderoServicoDetran.tipoEnvio === '01'"
+                        >ETC
+                      </span>
+                      <span v-else>{{ dataInvoice.tipoEnvio }}</span>
+                    </td>
+                    <td width="20%" align="center">
+                      {{ dataInvoice.valor | currency: 'BRL' }}
+                    </td>
+                  </tr>
+                </table>
+                <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                  <tr>
+                    <td
+                      height="45"
+                      valign="top"
+                      class="bordaesqdir topicAuthentication"
+                    >
+                      <span class="texto10bold topicAuthentication">
+                        <br />
+                        Autentica&ccedil;&atilde;o Mec&acirc;nica
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+                <table
+                  width="100%"
+                  height="35"
+                  border="0"
+                  align="center"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="border: 1px solid #dee5ee; border-style: none solid"
+                >
+                  <tr>
+                    <td>
+                      <div align="center">
+                        <img
+                          width="70%"
+                          src="../assets/images/img/g22088.png"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <table
+                  width="100%"
+                  border="0"
+                  cellpadding="3"
+                  cellspacing="0"
+                  class="bordacompleta"
+                >
+                  <tr class="texto11bold itemTitle">
+                    <td colspan="4" align="center" class="bordabaixo">
+                      Via do banco
+                    </td>
+                  </tr>
+                  <tr class="texto10bold">
+                    <td
+                      width="40%"
+                      align="center"
+                      class="bordadireitabaixo itemTitle-subTopic"
+                    >
+                      <b>Servi&ccedil;o</b>
+                    </td>
+                    <td
+                      width="19%"
+                      align="center"
+                      class="bordadireitabaixo itemTitle-subTopic"
+                    >
+                      <b>Quantidade</b>
+                    </td>
+                    <td
+                      width="21%"
+                      align="center"
+                      class="bordadireitabaixo itemTitle-subTopic"
+                    >
+                      <b>Tipo de Envio</b>
+                    </td>
+                    <td
+                      width="20%"
+                      align="center"
+                      class="bordabaixo itemTitle-subTopic"
+                    >
+                      <b> Valor R$</b>
+                    </td>
+                  </tr>
+                  <tr class="texto10">
+                    <td width="40%" align="center" class="bordadireitabaixo">
+                      {{ dataInvoice.descServico }}&nbsp;
+                    </td>
+                    <td width="19%" align="center" class="bordadireitabaixo">
+                      1
+                    </td>
+                    <td width="21%" align="center" class="bordadireitabaixo">
+                      <span v-if="borderoServicoDetran.tipoEnvio === '01'"
+                        >ETC
+                      </span>
+                      <span v-else>{{ dataInvoice.tipoEnvio }}</span
+                      >&nbsp;
+                    </td>
+                    <td width="20%" align="center" class="bordabaixo">
+                      {{ converterFloat(dataInvoice.valor) | currency: 'BRL' }}&nbsp;
+                    </td>
+                  </tr>
+                  <tr class="texto10bold">
+                    <td
+                      colspan="2"
+                      rowspan="5"
+                      align="center"
+                      class="bordacimadir"
+                    >
+                      <img [src]="imagemCodigoBarras" alt="Código de Barra" />
+  
+                      <!-- <img :src="borderoServicoDetran.codigoBarraImg64" /> -->
+                    </td>
+                    <td height="20" class="bordacimabaixodir"><b>Placa:</b></td>
+                    <td height="20" align="center" class="bordacimabaixo">
+                      {{ formatPlaca(dataInvoice.placa) }}&nbsp;
+                    </td>
+                  </tr>
+                  <tr class="texto10bold">
+                    <td height="20" class="bordadireitabaixo">
+                      <b>Data de Validade:</b>
+                    </td>
+                    <td height="20" align="center" class="bordabaixo">
+                      {{ formatDate(dataInvoice.validade) }}&nbsp;
+                    </td>
+                  </tr>
+                  <tr class="texto10bold">
+                    <td height="20" class="bordadireitabaixo">
+                      <b>Data de Emiss&atilde;o:</b>
+                    </td>
+                    <td height="20" align="center" class="bordabaixo">
+                      {{ formatDate( dataInvoice.dataInvoiceEmissao) }}&nbsp;
+                    </td>
+                  </tr>
+                  <tr class="texto10bold">
+                    <td height="20" class="bordadireitabaixo">
+                      <b>Data de Vencimento:</b>
+                    </td>
+                    <td height="20" align="center" class="bordabaixo">
+                      {{ formatDate(dataInvoice.vencimento) }}&nbsp;
+                    </td>
+                  </tr>
+                  <tr class="texto10bold">
+                    <td height="20" class="bordadireita">
+                      <b>Ano de Exerc&iacute;cio :</b>
+                    </td>
+                    <td height="20" align="center">
+                      {{ dataInvoice.anoExercicio }}&nbsp;
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

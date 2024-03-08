@@ -1,0 +1,60 @@
+@import "../../../shared/styles/colours.scss";
+
+.header {
+    background: $black-background-color;
+
+    &-title {
+        font-family: "Khand", sans-serif;
+        color: $disable-text-color;
+        font-size: 28px;
+        margin-top: 4px;
+        text-align: center;
+        padding: 15px 5px 25px 5px;
+    }
+    &-icon {
+        color: $white-text-color;
+        padding-left: 1rem;
+        padding-top: 4px;
+        height: 30px;
+        font-variation-settings:
+          'FILL'1,
+          'wght'300,
+          'GRAD'0,
+          'opsz'48;
+        background-color: $topic-line-text;
+        border-radius: 15px 0 0 15px;
+    }
+    &-field {
+        border-radius: 0;
+        width: 330px;
+        margin-left: 200px;
+    }
+    &-input {
+        color: $white-text-color;
+        font-size: smaller;
+        font-weight: lighter;
+        font-style: italic;
+        padding-left: 10px;
+        height: 34px;
+        border-radius: 0 15px 15px 0;
+        background-color: $topic-line-text;
+    }
+}
+
+.icon {
+    color: $white-text-color;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .menu {
+    position: absolute !important;
+    top: 10px !important;
+    width: 180px !important;
+    left: calc(100vw - 180px) !important;
+    height: 40px;
+}
+
+

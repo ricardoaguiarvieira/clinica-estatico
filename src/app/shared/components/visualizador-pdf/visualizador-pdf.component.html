@@ -1,0 +1,17 @@
+<div class="certidao" *ngIf="pdf">
+    <iframe #pdfFrame id="pdfFrame" width='100%' height='600px' [src]="pdf">
+    </iframe>
+</div>
+<div *ngIf="sucessoDownload">
+    <section
+        class="alerts_pdf  alerts-wrapper alerts-wrapper_success forms-wrapper-success">
+        <div class="alerts-wrapper-icon">
+             <mat-icon>check_circle_outline</mat-icon> 
+        </div>
+        <article class="alerts-wrapper-message">
+            <p>
+               Download realizado com sucesso!
+            </p>
+        </article>
+    </section>
+</div>

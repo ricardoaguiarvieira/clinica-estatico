@@ -1,0 +1,42 @@
+<div fxLayout="row wrap">
+  <div fxFlex="30" fxFlex.sm="35" fxFlex.xs="70" class="qrCode pd_left10 pd_15">
+    <div class="body-qrcode">
+      <div class="qr-code">
+        <qrcode class="qrcode" [width]="180" [qrdata]="data"></qrcode>
+        <div class="text-qrCode">
+          <p>
+            Escaneie e pague
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="70" fxFlex.sm="65" fxFlex.xs="100" class="pd_left10 pd_15">
+    <div class="forms-wrapper-body-item">
+      <div fxLayout="row wrap">
+        <h4>
+          Ou copie o código abaixo e utilize o Pix Copia e Cola no aplicativo que você
+          vai fazer o pagamento:
+        </h4>
+      </div>
+      <div fxLayout="row wrap">
+        <p class="forms-wrapper-body-item pix-section-content-codeField" (click)="onCopyPixCode()">
+          <mat-form-field fxFlex="100" fxFlex.sm="100" fxFlex.xs="100" appearance="outline">
+            <input matInput [value]="data" readonly="true" />
+            <mat-icon class="pix-section-content-codeField-icon" matSuffix>file_copy</mat-icon>
+          </mat-form-field>
+        </p>
+        <div fxFlex="100" fxFlex.sm="100" fxFlex.xs="100">
+          <button mat-raised-button color="primary" class="forms-wrapper-primaryButton button-pix"
+            (click)="onCopyPixCode()">
+            Copiar código
+          </button>
+        </div>
+        <h4>Você tem até 5 minutos para fazer o pagamento.</h4>
+        <div fxFlex="100" fxFlex.sm="100" fxFlex.xs="100">
+          <a class="pix-section-content-link" (click)="onOpenModal()">Como funciona</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
