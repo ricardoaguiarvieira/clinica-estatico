@@ -14,7 +14,7 @@ export class LoginPortalAdmClient {
   public currentUser$ = this.currentUserSource.asObservable();
   private URI_USUARIO = '/area-publica/usuario';
 
-  private readonly basePathUsuarioPortal: string = `${environment.dns.PORATAL_API}`;
+  private readonly basePathUsuarioPortal: string = `${environment.dns.PORTAL_API}`;
 
   constructor(
     private http: HttpClient,

@@ -1,24 +1,43 @@
-<div >
+<div>
     <h1 class="titulo" > Agendamento</h1>
-    <mat-card class="pesquisar-card">
-        <table>
-            <thead>
-                <td class="table-cabecalho" *ngFor="let cabecalho of tabela.cabecalho">
-                    <span>{{cabecalho.titulo}}</span>
-                </td>
-            </thead>
-            <tr *ngFor="let horario of tabela.horarios">
-                <td class="col-horario">
-                    <span>{{horario.hora}}</span>
-                </td>
-                <td *ngFor="let agendamento of horario.agendamentos" (click)="alterarAgendamento(agendamento)">
-                    <span>{{agendamento.descricao}}</span>
-                </td>
-            </tr>
-            
-        </table>
+    <mat-card >
+        <form>
+            <div  fxLayout="row wrap">
+                <div>
+                    <button class="voltar" mat-button> < </button>
+                </div>
+                <div fxFlex="35%">
+                    <mat-form-field appearance="outline">
+                        <mat-label>data</mat-label>
+                        <input matInput type="date">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button class="voltar" mat-button > > </button>
+                </div>
+            </div>
+        </form>
+        <mat-card-content class="pesquisar-card">
+            <table>
+                <thead>
+                    <td>
+                        <span></span>
+                    </td>
+                    <td class="table-cabecalho" *ngFor="let medicos of agenda.medicos">
+                        <span>{{medicos.nome}}</span>
+                    </td>
+                </thead>
+                <tr *ngFor="let horarioAgenda of agenda.horarios">
+                    <td class="col-horario">
+                        <span>{{horarioAgenda.horario}}</span>
+                    </td>
+                    <td style="border-bottom: 1px solid rgb(179, 205, 228);" *ngFor="let agendamento of horarioAgenda.agendamentos" (click)="alterarAgendamento(agendamento)">
+                        <span *ngIf="agendamento">{{agendamento.descricao}}</span>
+                    </td>
+                </tr>
+            </table>
+        </mat-card-content>
     </mat-card>
-
     <div class="control-button">
         <button mat-button class="forms-wrapper-primaryButton">SALVAR</button>
         <button mat-stroked-button (click)="voltar()" class="voltar">VOLTAR</button>

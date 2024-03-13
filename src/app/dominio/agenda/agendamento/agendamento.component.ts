@@ -1,9 +1,11 @@
+import { HttpEvent } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AlertsService } from 'src/app/layout-servicos/alerts/alerts.service';
+import { Agenda } from 'src/app/shared/interface/agenda';
 import { Credenciada } from 'src/app/shared/model/credenciada/credenciada';
 import { TipoCredenciada } from 'src/app/shared/model/credenciada/tipo-credenciada';
 import { Pageable } from 'src/app/shared/model/pageable';
@@ -18,18 +20,20 @@ import { PortalService } from 'src/app/shared/service/portal.service';
 })
 export class AgendamentoComponent implements OnInit{
 
-  formCadastro! : FormGroup;
-  formValor! : FormGroup;
-  servicoRecebido? : Servico;
-  id?: number;
-  credenciadasVinculadas: Credenciada[] = [];
-  displayedColumns: string[] = ['cnpj', 'razaoSocial', 'nomeFantasia', 'ramo', 'valor', 'status', 'acao'];
-  viewTemplate = 'cadastro';
-  tiposCredenciada!: Observable<TipoCredenciada[]>;
-  status!: Observable<IndSituacaoAtiva[]>
-  idPassed!: string | null; 
-  pagination: Pageable = new Pageable();
-  dataSource = new MatTableDataSource<Credenciada>();
+  // formCadastro! : FormGroup;
+  // formValor! : FormGroup;
+  // servicoRecebido? : Servico;
+  // id?: number;
+  // credenciadasVinculadas: Credenciada[] = [];
+  // displayedColumns: string[] = ['cnpj', 'razaoSocial', 'nomeFantasia', 'ramo', 'valor', 'status', 'acao'];
+  // viewTemplate = 'cadastro';
+  // tiposCredenciada!: Observable<TipoCredenciada[]>;
+  // status!: Observable<IndSituacaoAtiva[]>
+  // idPassed!: string | null; 
+  // pagination: Pageable = new Pageable();
+  // dataSource = new MatTableDataSource<Credenciada>();
+
+  agenda!: Agenda;
 
   constructor(
     private router: Router,
@@ -40,8 +44,9 @@ export class AgendamentoComponent implements OnInit{
   ) {
   }
 
+
   tabela = {
-    cabecalho: [ {titulo: ''}, {titulo: 'DR A'}, {titulo: 'DR B'}, {titulo: 'DR C'}],
+    cabecalho: [ {titulo: 'DR A'}, {titulo: 'DR B'}, {titulo: 'DR C'}],
     horarios: [
       {
         hora: '15:00',
@@ -60,6 +65,12 @@ export class AgendamentoComponent implements OnInit{
   
   ngOnInit(): void {
     console.log('agenda');
+    this.portalService.agendaClient.agendamentos('12-03-2024')
+    .subscribe((res: Agenda) => {
+      this.agenda = res;
+      console.log('response', res)
+    }
+    );
   }
 
   voltar() : void{

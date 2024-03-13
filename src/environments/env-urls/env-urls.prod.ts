@@ -1,3 +1,3 @@
 export const dns = {
-  PORATAL_API:''
+  PORTAL_API:''
 };

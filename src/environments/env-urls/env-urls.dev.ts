@@ -1,3 +1,3 @@
 export const devDns = {
-  PORATAL_API:''
+  PORTAL_API: 'http://localhost:8082'
 };
