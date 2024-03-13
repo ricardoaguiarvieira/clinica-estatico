@@ -25,11 +25,12 @@ import { ComponentsModule } from 'src/app/shared/components/components.module';
 import { MatRadioModule } from '@angular/material/radio';
 import { AgendaRoutingModule } from './agenda-routing.module';
 import { AgendamentoComponent } from './agendamento/agendamento.component';
-
+import { AgendarComponent } from './agendamento/agendar/agendar.component';
 
 @NgModule({
   declarations: [
     AgendamentoComponent,
+    AgendarComponent
   ],
   imports: [
     CommonModule,
@@ -62,6 +63,6 @@ import { AgendamentoComponent } from './agendamento/agendamento.component';
   exports: [
     AgendamentoComponent
 
-  ]
+  ],
 })
 export class AgendaModule {}

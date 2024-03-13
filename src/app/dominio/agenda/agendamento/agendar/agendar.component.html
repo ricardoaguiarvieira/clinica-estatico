@@ -1,0 +1,20 @@
+<div>
+    <h1>Agendar</h1>
+    <mat-card>
+        <mat-card-content *ngIf="form">
+            <form [formGroup]="form" (ngSubmit)="gravarAgendamento()">
+                <div fxLayout="row wrap">
+                    <div fxFlex="50%">
+                        <mat-select formControlName="horario" placeholder="Selecione a horario">
+                           <mat-option *ngFor="let horario of horariosDisponivel | async" [value]="horario">{{ horario }}</mat-option>
+                       </mat-select>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <div class="control-button">
+        <button mat-button class="forms-wrapper-primaryButton">SALVAR</button>
+        <button mat-stroked-button (click)="fecharModal()" class="voltar">VOLTAR</button>
+    </div>
+</div>

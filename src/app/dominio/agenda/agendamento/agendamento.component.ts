@@ -1,8 +1,11 @@
 import { HttpEvent } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDatepickerControl, MatDatepickerPanel } from '@angular/material/datepicker/datepicker-base';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 import { Observable } from 'rxjs';
 import { AlertsService } from 'src/app/layout-servicos/alerts/alerts.service';
 import { Agenda } from 'src/app/shared/interface/agenda';
@@ -12,6 +15,7 @@ import { Pageable } from 'src/app/shared/model/pageable';
 import Servico from 'src/app/shared/model/servico';
 import { IndSituacaoAtiva } from 'src/app/shared/model/servicos/indicador-situacao-ativa';
 import { PortalService } from 'src/app/shared/service/portal.service';
+import { AgendarComponent } from './agendar/agendar.component';
 
 @Component({
   selector: 'app-agenda',
@@ -20,66 +24,61 @@ import { PortalService } from 'src/app/shared/service/portal.service';
 })
 export class AgendamentoComponent implements OnInit{
 
-  // formCadastro! : FormGroup;
-  // formValor! : FormGroup;
-  // servicoRecebido? : Servico;
-  // id?: number;
-  // credenciadasVinculadas: Credenciada[] = [];
-  // displayedColumns: string[] = ['cnpj', 'razaoSocial', 'nomeFantasia', 'ramo', 'valor', 'status', 'acao'];
-  // viewTemplate = 'cadastro';
-  // tiposCredenciada!: Observable<TipoCredenciada[]>;
-  // status!: Observable<IndSituacaoAtiva[]>
-  // idPassed!: string | null; 
-  // pagination: Pageable = new Pageable();
-  // dataSource = new MatTableDataSource<Credenciada>();
-
   agenda!: Agenda;
+  date = moment(new Date());
+  data!: string;
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private paramRecivier : ActivatedRoute,
     private readonly alertsService: AlertsService,
+    private dialogRef: MatDialog,
     private readonly portalService: PortalService
   ) {
   }
-
-
-  tabela = {
-    cabecalho: [ {titulo: 'DR A'}, {titulo: 'DR B'}, {titulo: 'DR C'}],
-    horarios: [
-      {
-        hora: '15:00',
-        agendamentos: [{id: 2, descricao: 'teste de agendamento'}, {id: 3, descricao: 'teste de agendamento 2'}, {id: 4, descricao: 'teste de agendamento 3'}]
-      },
-      {
-        hora: '15:30',
-        agendamentos: [{id: 2, descricao: 'teste de agendamento'}, {id: 3, descricao: 'teste de agendamento 2'}, {id: 4, descricao: 'teste de agendamento 3'}]
-      },
-      {
-        hora: '16:00',
-        agendamentos: [{id: 2, descricao: 'teste de agendamento'}, {id: 3, descricao: 'teste de agendamento 2'}, {id: 4, descricao: 'teste de agendamento 3'}]
-      }
-    ]
-  }
   
   ngOnInit(): void {
-    console.log('agenda');
-    this.portalService.agendaClient.agendamentos('12-03-2024')
-    .subscribe((res: Agenda) => {
-      this.agenda = res;
-      console.log('response', res)
-    }
-    );
+    this.data = this.formateData();
+    this.getAgendamentosDia();
+  }
+
+  getAgendamentosDia(): void{
+    this.portalService.agendaClient.agendamentos(this.data)
+    .subscribe((res: Agenda) => {this.agenda = res;});
+  }
+
+  formateData(): string {
+    return this.date.format('YYYY-MM-DD')
   }
 
   voltar() : void{
     this.router.navigateByUrl('/');
   }
 
-  alterarAgendamento(agendamento: any): void{
+  detalharAgendamento(agendamento: any): void {
     console.log('agendamento', agendamento);
-    
+    document.body.scrollTo(0, 0);
+    this.dialogRef.open(AgendarComponent, {
+      data: agendamento,
+      width: '700px',
+      height: '300px',
+    })
+  }
+
+  changeData(): void{
+    this.getAgendamentosDia();
+  }
+  proximoDia(): void{
+    this.date.add(1, 'd');
+    this.data = this.formateData();
+    this.getAgendamentosDia();
+  }
+
+  anteriorDia(): void{
+    this.date.add(-1, 'd');
+    this.data = this.formateData();
+    this.getAgendamentosDia();
   }
 
 }

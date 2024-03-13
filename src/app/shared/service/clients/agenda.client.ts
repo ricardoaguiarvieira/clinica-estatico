@@ -8,6 +8,7 @@ import { Agenda } from '../../interface/agenda';
 export class AgendaClient{
 
     private readonly client: AppClient;
+
     
     constructor(http: HttpClient) {
         const urlAgenda = environment.dns.PORTAL_API;
@@ -17,5 +18,9 @@ export class AgendaClient{
 
     agendamentos(data: string): Observable<Agenda> {
         return this.client.get(`/${data}`);
+    }
+
+    horarios(): Observable<string[]> {
+        return this.client.get('/horarios');
     }
 }

@@ -1,24 +1,24 @@
 <div>
-    <h1 class="titulo" > Agendamento</h1>
+    <h1 class="titulo"> Agendamento</h1>
     <mat-card >
-        <form>
-            <div  fxLayout="row wrap">
+        <!-- <form> -->
+            <div fxLayout="row wrap">
                 <div>
-                    <button class="voltar" mat-button> < </button>
+                    <button (click)="anteriorDia()" class="voltar" mat-button> < </button>
                 </div>
-                <div fxFlex="35%">
+                <div fxFlex="35%" *ngIf="data">
                     <mat-form-field appearance="outline">
                         <mat-label>data</mat-label>
-                        <input matInput type="date">
+                        <input matInput type="date" (change)="changeData()"  [(ngModel)]="data">
                     </mat-form-field>
                 </div>
                 <div>
-                    <button class="voltar" mat-button > > </button>
+                    <button (click)="proximoDia()" class="voltar" mat-button > > </button>
                 </div>
             </div>
-        </form>
+        <!-- </form> -->
         <mat-card-content class="pesquisar-card">
-            <table>
+            <table *ngIf="agenda">
                 <thead>
                     <td>
                         <span></span>
@@ -31,8 +31,11 @@
                     <td class="col-horario">
                         <span>{{horarioAgenda.horario}}</span>
                     </td>
-                    <td style="border-bottom: 1px solid rgb(179, 205, 228);" *ngFor="let agendamento of horarioAgenda.agendamentos" (click)="alterarAgendamento(agendamento)">
-                        <span *ngIf="agendamento">{{agendamento.descricao}}</span>
+                    <td style="border-bottom: 1px solid rgb(179, 205, 228);" *ngFor="let agendamento of horarioAgenda.agendamentos">
+                        
+                        <div *ngIf="agendamento" (click)="detalharAgendamento(agendamento)">
+                            <span>{{agendamento.descricao}}</span>
+                        </div>
                     </td>
                 </tr>
             </table>
